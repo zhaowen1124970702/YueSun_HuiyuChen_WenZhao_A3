@@ -185,3 +185,25 @@
 .AllCommentsStyle {
     margin-left: 15px;
 }
+
+@media(max-width:650px){
+    .postInforStyle2{
+        flex-direction: column;
+    }
+    .postInforStyle{
+        flex-direction: column;
+    }
+    .inputStyle2{
+        width: 100%;
+    }
+    .editStyle {
+        font-size: 15px;
+    }    
+    .deleteStyle {
+        font-size: 15px;
+    }
+    .contentStyle{
+        font-size: 15px;
+    }
+
+}

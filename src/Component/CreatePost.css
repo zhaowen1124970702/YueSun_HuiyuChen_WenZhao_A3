@@ -73,8 +73,6 @@
     text-transform: uppercase;
     font-weight: bold;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-
 }
 
 .messageStyle {
@@ -84,5 +82,11 @@
     margin: 10px;
 }
 
+@media(max-width:650px){
+    .createButton {
+        font-size: 18px;
+    }
+  
+  }
 
 

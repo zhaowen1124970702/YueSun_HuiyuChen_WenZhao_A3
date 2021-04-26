@@ -92,3 +92,13 @@
   background-color: #269243;
   cursor: pointer;
 }
+
+@media(max-width:650px){
+  .container{
+    margin-bottom: 15px;
+  }
+  .createButton {
+    font-size: 18px;
+  }
+
+}

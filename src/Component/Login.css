@@ -53,6 +53,15 @@
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.errorMessage{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-align: center;
+    color: #E34C26;
+    font-size: medium;
+}
+
 @media(max-width:650px){
     .loginAndRegister{
         flex-direction: column;

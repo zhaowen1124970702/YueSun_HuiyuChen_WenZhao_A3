@@ -81,7 +81,7 @@ export default class Login extends React.Component {
         return (
             <div>
                 <Navbar></Navbar>
-                <div>{this.displayErrorMessage()}</div>
+                <div className="errorMessage">{this.displayErrorMessage()}</div>
                 <div className="loginAndRegister">
                     <div className="inputContainer">
                         <div className="inputTitle">Login</div>

@@ -49,8 +49,8 @@ router.get('/cookie',cookie_middleware, (req, res) => {
 
 
 router.post('/logOut', (req, res) => {
-    res.clearCookie('webdevtoken');
-    res.sendStatus(200).redirect('/');
+    res.clearCookie('webdevtoken', {path: '/'});
+    res.sendStatus(200);
 })
 
 

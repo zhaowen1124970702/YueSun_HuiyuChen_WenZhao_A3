@@ -1,0 +1,83 @@
+.commentDetail{
+    display:flex;
+    position:relative;
+    flex-direction: row;
+    height: fit-content;
+    text-align: center;
+    color:#565c63;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 14px;
+    /* border: solid 1px green; */
+  }
+
+  .editDeleyeDetail{
+    display:flex;
+    position:relative;
+    flex-direction: row;
+    height: fit-content;
+    text-align: center;
+    color:#565c63;
+    text-align: center;
+    /* border: solid 1px green; */
+    
+  }
+
+  .inputStyle{
+    width: 70%;
+    height: fit-content;
+    padding: 12px 17px;
+    margin: 10px;
+    box-sizing: border-box;
+    font-size: medium;
+    color:#24292E;
+}
+
+.createButton {
+    width: fit-content;
+    height: fit-content;
+    border: solid 1px #6A737D;
+    background-color: #2EA44F;
+    color: aliceblue;
+    font-weight: bolder;
+    padding:10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.createButton:hover{
+    background-color: #269243;
+    cursor: pointer;
+}
+
+.timeStyle {
+    margin-left: 10px;
+}
+.editStyle {
+    margin-left: 10px;
+    color:#0366D6;
+}
+
+.editStyle:hover{
+    text-decoration:underline;
+    cursor: pointer;
+}
+
+.deleteStyle {
+    margin-left: 10px;
+    color:#0366D6;
+}
+
+.deleteStyle:hover{
+    text-decoration:underline;
+    cursor: pointer;
+}
+
+.commentBlock {
+    margin-top: 15px;
+}
+
+.messageStyle {
+    font-size: medium;
+    color: #E34C26;
+}

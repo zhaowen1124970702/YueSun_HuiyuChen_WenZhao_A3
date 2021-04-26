@@ -2,6 +2,7 @@ import React from 'react';
 import Comment from './Comment';
 import Axios from 'axios';
 import Navbar from './Navbar';
+import "./Post.css";
 
 
 export default class Post extends React.Component {
@@ -109,11 +110,11 @@ export default class Post extends React.Component {
     showEditandDelete(){
         if(this.state.loginUser === this.state.currentPost.username){
             return(
-                <div>
-                    <div onClick={() => this.changeToEditingMode()}>
+                <div className="editDeleyeDetail">
+                    <div className="editStyle" onClick={() => this.changeToEditingMode()}>
                         Edit
                     </div>
-                    <div onClick={() => this.submitDelete()}>
+                    <div className="deleteStyle" onClick={() => this.submitDelete()}>
                         Delete
                     </div>
                 </div>
@@ -122,32 +123,56 @@ export default class Post extends React.Component {
         }
     }
 
+    jump2Post(){
+        if(this.state.URL){
+            window.location.href = this.state.URL
+        }
+    }
+
     showPost(){
         if(!this.state.editing){
             return(
-                <div>
-                    <div>Title: {this.state.currentPost.title}</div>
-                    <div>Editor: {this.state.currentPost.username}</div>
-                    <div>{this.state.currentPost.postTime.slice(0,10) + " " + this.state.currentPost.postTime.slice(11,19) }</div>
-                    <div>URL: {this.state.currentPost.URL}</div>
-                    <div>OR</div>
-                    <div>Content: {this.state.currentPost.content}</div>
-                    <div >{this.showEditandDelete()}</div>
+                <div className="container">
+                    <div className="titleStyle">Title: {this.state.currentPost.title}</div>
+                    <div className="postInforStyle">
+                        <div className="editorStyle">{this.state.currentPost.username}</div>
+                        <div className="timeStyle">{this.state.currentPost.postTime.slice(0,10) + " " + this.state.currentPost.postTime.slice(11,19) }</div>
+                        <div className="timeStyle">{this.state.allComments.length} comments</div>
+                        <div >{this.showEditandDelete()}</div>
+                    </div>
+                    <div className="titleStyle">URL:</div>
+                    <div className="URLStyle" onClick={() => this.jump2Post()}>{this.state.currentPost.URL}</div>
+                    <div className="titleStyle">OR</div>
+                    <div className="titleStyle">Content:</div>
+                    <div className="inputStyle2">{this.state.currentPost.content}</div>
+                    {this.displayErrorMessage()}
+                    {this.showAddSubmit()}
+                    {this.showComments()}
                 </div>
             )
         }else{
             return(
-                <div>
-                    <label >Title:</label>
-                    <input type="text" value={this.state.title} onChange={e => this.setState({title: e.target.value})}></input>
-                    <div>Editor:</div>{this.state.currentPost.username}
-                    {this.state.currentPost.postTime}
-                    <label >URL:</label>
-                    <input type="text" value={this.state.URL} onChange={e => this.setState({URL: e.target.value})}></input>
-                    <div>OR</div>
-                    <label >Content:</label>
-                    <input type="text" value={this.state.content} onChange={e => this.setState({content: e.target.value})}></input>
-                    <div onClick={() => this.submitEdit()}>Submit Edit</div>
+                <div className="container">
+                    <label className="titleStyle">Title:</label>
+                    <div className="postInforStyle2">
+                        <div className="editorStyle"></div>{this.state.currentPost.username}
+                        <div className="timeStyle"> {this.state.currentPost.postTime.slice(0,10) + " " + this.state.currentPost.postTime.slice(11,19) } </div>
+                    </div>
+                    <textarea className="inputStyle" type="text" value={this.state.title} onChange={e => this.setState({title: e.target.value})}></textarea>
+
+                    <label className="titleStyle">URL:</label>
+                    <textarea className="inputStyle" type="text" value={this.state.URL} onChange={e => this.setState({URL: e.target.value})}></textarea>
+                    
+                    <div className="titleStyle">OR</div>
+                    
+                    <label className="titleStyle">Content:</label>
+                    <textarea className="contentStyle" type="text" value={this.state.content} onChange={e => this.setState({content: e.target.value})}></textarea>
+                    
+                    <div className="createButton" onClick={() => this.submitEdit()}>Submit Edit</div>
+                    
+                    {this.showAddSubmit()}
+                    {this.displayErrorMessage()}
+                    {this.showComments()}
                 </div>
             )
         }
@@ -183,15 +208,12 @@ export default class Post extends React.Component {
                 message: "Fail to update Post"
             })
         })
-
-
     }
 
     changeToEditingMode(){
         this.setState( {
             editing:true
         })
-
     }
 
 
@@ -208,47 +230,46 @@ export default class Post extends React.Component {
             })
             .catch((error) => {
                 this.setState( {
-                    message: "Fail to add new comment"
+                    message: "Fail to add new comment!  Please try log in / sign up!"
                 })
             })
         }
-
-
     }
 
     showAddSubmit(){
         return(
-            <div>
-                <input type="text" value={this.state.newComment} onChange={e => this.setState({newComment: e.target.value})}></input>
-                <div onClick={() => this.submitAddNewComment()}>Add Submit</div>
+            <div >
+                <textarea className="inputStyle" type="text" value={this.state.newComment} onChange={e => this.setState({newComment: e.target.value})}></textarea>
+                <div className="createButton" onClick={() => this.submitAddNewComment()}>Add Comments</div>
             </div>
-
         )
     }
 
     displayErrorMessage(){
         if(this.state.message){
-            return this.state.message
+            return (
+                <div className="messageStyle">{this.state.message}</div>
+            )
         }  
     }
 
+    showComments(){
+        return (
+            <div >
+                {this.state.allComments.reverse().map((singleComment, index)=><Comment key ={index} comment ={singleComment} loginUser = {this.state.loginUser}></Comment>)}
+            </div>
+        )
+    }
 
     render() {
         if(!this.state.currentPost){
             return null;
-
         }
         return (
             <div>
                 <Navbar></Navbar>
                 {this.showPost()}
-                {this.displayErrorMessage()}
-                <h2>{this.state.allComments.length} comments</h2>
-                {this.showAddSubmit()}
-                <div>{this.state.allComments.map((singleComment, index)=><Comment key ={index} comment ={singleComment} loginUser = {this.state.loginUser}></Comment>)}</div>
-
             </div>
-
         )
     }
 }

@@ -59,16 +59,16 @@ export default class CreatePost extends React.Component {
             <div className="outline">
                 <Navbar></Navbar>
                 <form className="container">
-                <div className="headerStyle">Create New Post</div>
-                <label className="titleStyle">Title</label>
-                <textarea type="text" value={this.state.title} onChange={e => this.setState({title: e.target.value})} className="inputStyle"></textarea>
-                <label className="titleStyle">URL</label>
-                <textarea type="text" value={this.state.URL} onChange={e => this.setState({URL: e.target.value})} className="inputStyle"></textarea>
-                <div className="titleStyle">OR</div>
-                <label className="titleStyle">Content</label>
-                <textarea cols="40" rows="5" value={this.state.content} onChange={e => this.setState({content: e.target.value})} className="contentStyle"></textarea>
-                <div onClick={() => this.onSubmit()} className="createButton">Create</div>
-                <div className="messageStyle">{this.displayErrorMessage()}</div>
+                    <div className="headerStyle">Create New Post</div>
+                    <label className="titleStyle">Title</label>
+                    <textarea type="text" value={this.state.title} onChange={e => this.setState({title: e.target.value})} className="inputStyle"></textarea>
+                    <label className="titleStyle">URL</label>
+                    <textarea type="text" value={this.state.URL} onChange={e => this.setState({URL: e.target.value})} className="inputStyle"></textarea>
+                    <div className="titleStyle">OR</div>
+                    <label className="titleStyle">Content</label>
+                    <textarea cols="40" rows="5" value={this.state.content} onChange={e => this.setState({content: e.target.value})} className="contentStyle"></textarea>
+                    <div onClick={() => this.onSubmit()} className="createButton">Create</div>
+                    <div className="messageStyle">{this.displayErrorMessage()}</div>
                 </form>
             </div>
 

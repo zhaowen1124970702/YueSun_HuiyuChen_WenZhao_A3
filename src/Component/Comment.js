@@ -1,6 +1,7 @@
 import './App.css';
 import React from 'react';
 import Axios from 'axios';
+import './Comment.css';
 
 export default class Comment extends React.Component {
 
@@ -59,11 +60,11 @@ export default class Comment extends React.Component {
     showEditandDelete(){
         if(this.state.loginUser === this.state.comment.editorUsername){
             return(
-                <div>
-                    <div onClick={() => this.changeToEditingMode()}>
-                        Edit
+                <div className="editDeleyeDetail">
+                    <div className="editStyle" onClick={() => this.changeToEditingMode()}>
+                        Edit  
                     </div>
-                    <div onClick={() => this.submitDelete()}>
+                    <div className="deleteStyle" onClick={() => this.submitDelete()}>
                         Delete
                     </div>
                 </div>
@@ -84,8 +85,8 @@ export default class Comment extends React.Component {
             return(
                 <div>
                     <h2>editingNow</h2>
-                    <input type="text" value={this.state.content} onChange={e => this.setState({content: e.target.value})}></input>
-                    <div onClick={() => this.submitEdit()}>Submit</div>
+                    <textarea className="inputStyle" type="text" value={this.state.content} onChange={e => this.setState({content: e.target.value})}></textarea>
+                    <div className="createButton" onClick={() => this.submitEdit()}>Submit</div>
 
                 </div>
             )
@@ -94,19 +95,26 @@ export default class Comment extends React.Component {
 
     displayErrorMessage(){
         if(this.state.message){
-            return this.state.message
+            return (
+                <div className="messageStyle">{this.state.message}</div>
+            )
+            
         }  
     }
 
     render() {
         return (
             <div>
-                <h2>{JSON.stringify(this.state.editing)}</h2>
-                <div>{this.state.comment.editorUsername}</div>
-                <div>Comment Time: {this.state.comment.postTime.slice(0,10) + " " + this.state.comment.postTime.slice(11,19)}</div>
-                {this.showContent()}
-                {this.showEditandDelete()}
-                {this.displayErrorMessage()}
+                <div className="commentBlock">
+                    {this.showContent()}
+                    <div className="commentDetail">
+                        <div>{this.state.comment.editorUsername}</div>
+                        <div className="timeStyle"> {this.state.comment.postTime.slice(0,10) + " " + this.state.comment.postTime.slice(11,19)}</div>
+                        {this.showEditandDelete()}
+                    </div>
+                </div>
+                {this.displayErrorMessage()} 
+
             </div>
 
         )

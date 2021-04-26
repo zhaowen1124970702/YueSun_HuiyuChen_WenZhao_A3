@@ -77,7 +77,7 @@ export default class App extends React.Component {
                       <div className="postBlock">
                         <h3 className="title" key={index} onClick={() => this.enterSinglePost(singlePost)}>{singlePost.title}</h3>
                         <div className="titleDetail">
-                            <div>{singlePost.postTime.slice(0,10) + " " +singlePost.postTime.slice(11,19) }</div>
+                            <div className="timeStyle2">{singlePost.postTime.slice(0,10) + " " +singlePost.postTime.slice(11,19) }</div>
                             <div className="commentsStyle" onClick = {()=>this.directToComment(singlePost)}> |  Comments</div>
                         </div>
 

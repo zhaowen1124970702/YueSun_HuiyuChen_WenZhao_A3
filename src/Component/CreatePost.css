@@ -66,10 +66,13 @@
 }
 
 .titleStyle {
-    font-size: large;
     font-weight: bolder;
     margin: 10px;
-    color:#24292E;
+    font-size: 22px;
+    color: #24292E;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 
 }

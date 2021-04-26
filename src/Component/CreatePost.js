@@ -1,6 +1,7 @@
 import Navbar from "./Navbar";
 import React from 'react';
 import Axios from 'axios';
+import './CreatePost.css';
 
 export default class CreatePost extends React.Component {
 
@@ -55,21 +56,20 @@ export default class CreatePost extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="outline">
                 <Navbar></Navbar>
-                <h1>Create New Post</h1>
-                <form>
-                <label >Title</label>
-                <input type="text" value={this.state.title} onChange={e => this.setState({title: e.target.value})}></input>
-                <label >URL</label>
-                <input type="text" value={this.state.URL} onChange={e => this.setState({URL: e.target.value})}></input>
-                <h4>OR</h4>
-                <label >content</label>
-                <input type="text" value={this.state.content} onChange={e => this.setState({content: e.target.value})}></input>
-                <div onClick={() => this.onSubmit()}>Create</div>
+                <form className="container">
+                <div className="headerStyle">Create New Post</div>
+                <label className="titleStyle">Title</label>
+                <textarea type="text" value={this.state.title} onChange={e => this.setState({title: e.target.value})} className="inputStyle"></textarea>
+                <label className="titleStyle">URL</label>
+                <textarea type="text" value={this.state.URL} onChange={e => this.setState({URL: e.target.value})} className="inputStyle"></textarea>
+                <div className="titleStyle">OR</div>
+                <label className="titleStyle">Content</label>
+                <textarea cols="40" rows="5" value={this.state.content} onChange={e => this.setState({content: e.target.value})} className="contentStyle"></textarea>
+                <div onClick={() => this.onSubmit()} className="createButton">Create</div>
+                <div className="messageStyle">{this.displayErrorMessage()}</div>
                 </form>
-                <div>{this.displayErrorMessage()}</div>
-
             </div>
 
         )

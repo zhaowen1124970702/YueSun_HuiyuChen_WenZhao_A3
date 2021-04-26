@@ -37,6 +37,19 @@
   }
 } */
 
+.container{
+  display:flex;
+  position:relative;
+  flex-direction: column;
+  left:50%;
+  transform: translate(-50%,0);
+  width:90%;
+  height: 100%;
+  border: solid 1px #6A737D;
+  border-radius: 10px;
+  background-color: #F6F8FA;
+}
+
 .titleList{
   display:flex;
   position:relative;
@@ -63,4 +76,24 @@
   width:100%;
   top: 0;
 
+}
+
+
+.postList {
+  padding: 12px 17px;
+  font-size: x-large;
+  font-weight: bolder;
+  border: solid 1px #6A737D;
+  border-radius: 10px;
+
+}
+
+.commentsStyle {
+  font-size: small;
+}
+
+.commentsStyle:hover {
+  font-size: small;
+  text-decoration:underline;
+  cursor: pointer;
 }

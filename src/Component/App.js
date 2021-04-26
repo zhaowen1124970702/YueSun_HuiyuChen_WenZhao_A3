@@ -21,7 +21,7 @@ export default class App extends React.Component {
                 <div className="navBar">
                     <h1>Home Page</h1>
                     <div>{this.state.loginUser}</div>
-                    <button>Create New Post</button>
+                    <div>Create New Post</div>
                     <button>Logout</button>
                 </div>
             )
@@ -109,12 +109,12 @@ export default class App extends React.Component {
                 <h2>Home Page</h2>
                 <Navbar></Navbar>
                 {this.showCreatePost()}
-                <div className = "titleList">
+                <div className="container">
                       {this.state.postList.map((singlePost,index)=>
                       <div>
                         <h3 className="title" key={index} onClick={() => this.enterSinglePost(singlePost)}>{singlePost.title}</h3>
                         <h4>{singlePost.postTime.slice(0,10) + " " +singlePost.postTime.slice(11,19) }</h4>
-                        <div onClick = {()=>this.directToComment(singlePost)}>Comments</div>
+                        <div className="commentsStyle" onClick = {()=>this.directToComment(singlePost)}>Comments</div>
                       </div>)}
                 </div>
             </div>

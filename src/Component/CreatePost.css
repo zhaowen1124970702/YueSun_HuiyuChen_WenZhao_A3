@@ -1,0 +1,86 @@
+.outline {
+    height: 800px;
+    width:100%;
+}
+
+.container{
+    display:flex;
+    position:relative;
+    flex-direction: column;
+    left:50%;
+    transform: translate(-50%,0);
+    width:90%;
+    height: 100%;
+    border: solid 1px #6A737D;
+    border-radius: 10px;
+    background-color: #F6F8FA;
+  }
+
+.headerStyle {
+    background-color: #79B8FF;
+    padding: 12px 17px;
+    font-size: x-large;
+    font-weight: bolder;
+    border: solid 1px #6A737D;
+    border-radius: 10px;
+    color:white;
+
+}
+
+.createButton {
+    width: fit-content;
+    height: fit-content;
+    border: solid 1px #6A737D;
+    background-color: #2EA44F;
+    color: aliceblue;
+    font-weight: bolder;
+    padding:10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.createButton:hover{
+    background-color: #269243;
+    cursor: pointer;
+}
+
+.inputStyle{
+    width: 70%;
+    height: fit-content;
+    padding: 12px 17px;
+    margin: 10px;
+    box-sizing: border-box;
+    font-size: medium;
+    color:#24292E;
+}
+
+
+.contentStyle{
+    width: 70%;
+    height: fit-content;
+    display: inline;
+    padding: 12px 17px;
+    margin: 10px;
+    box-sizing: border-box;
+    font-size: medium;
+    color:#24292E;
+}
+
+.titleStyle {
+    font-size: large;
+    font-weight: bolder;
+    margin: 10px;
+    color:#24292E;
+
+
+}
+
+.messageStyle {
+    font-size: medium;
+    color: #E34C26;
+    padding: 12px 20px;
+    margin: 10px;
+}
+
+
+

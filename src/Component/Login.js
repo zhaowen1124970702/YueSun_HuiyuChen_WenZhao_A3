@@ -1,5 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
+import Navbar from './Navbar';
 import './Login.css';
 
 export default class Login extends React.Component {
@@ -79,8 +80,7 @@ export default class Login extends React.Component {
     render() {
         return (
             <div>
-                <h1>Login Page</h1>
-                <div onClick={() => this.redirectToHomePage()}>Home</div>
+                <Navbar></Navbar>
                 <div>{this.displayErrorMessage()}</div>
                 <div className="loginAndRegister">
                     <div className="inputContainer">

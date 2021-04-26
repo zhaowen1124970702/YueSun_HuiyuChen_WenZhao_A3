@@ -2,9 +2,7 @@ import './App.css';
 import React from 'react';
 import Axios from 'axios';
 import './Navbar.css';
-
-const jwt = require('jsonwebtoken');
-
+import {ReactComponent as HomeIcon} from '../homeIcon.svg';
 
 export default class Navbar extends React.Component {
 
@@ -55,15 +53,22 @@ export default class Navbar extends React.Component {
     showNavComponent() {
         if(!this.state.loginUser) {
             return(
-                <div>
-                    <div onClick={() => this.redirectToLogin()}>Log In / Sign Up</div>
+                <div className="navbarContainer">
+                    <HomeIcon className="icon"/>
+                    <div className="websiteName" onClick={() => this.redirectToHomePage()}>Fur Families News</div>
+                    <div className="logInButtion" onClick={() => this.redirectToLogin()}>LOGIN / SIGN UP</div>
+                    
                 </div>
             )
         } else {
             return(
-                <div>
-                    <h2>Welcome : {this.state.loginUser}</h2>
-                    <div onClick={() => this.logOut()}>Logout</div>
+                <div className="navbarContainer">
+                    <HomeIcon className="icon"/>
+                    <div className="websiteName"  onClick={() => this.redirectToHomePage()}>Fur Families News</div>
+                    <div className="userContainer">
+                        <div className="userInfo">{this.state.loginUser}</div>
+                        <div className="logoutButtion" onClick={() => this.logOut()}>LOGOUT</div>
+                    </div>
                 </div>
             )
         }
@@ -77,8 +82,7 @@ export default class Navbar extends React.Component {
 
     render() {
         return (
-            <div>
-                <div onClick={() => this.redirectToHomePage()}>Home</div>
+            <div >
                 {this.showNavComponent()}
             </div>
 

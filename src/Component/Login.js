@@ -99,14 +99,14 @@ export default class Login extends React.Component {
                 <input type="text" value={this.state.username1} onChange={e => this.setState({username1: e.target.value})}></input>
                 <label >Password:</label>
                 <input type="password" value={this.state.password1} onChange={e => this.setState({password1: e.target.value})}></input>
-                <div onClick={() => this.onSubmit()}>Register</div>
+                <div className="loginButton" onClick={() => this.onSubmit()}>Register</div>
 
                 <h2>Login</h2>
                 <label >Username:</label>
                 <input type="text" value={this.state.username2} onChange={e => this.setState({username2: e.target.value})}></input>
                 <label >Password:</label>
                 <input type="password" value={this.state.password2} onChange={e => this.setState({password2: e.target.value})}></input>
-                <div onClick={() => this.onClick()}>Login</div>
+                <div className="loginButton" onClick={() => this.onClick()}>Login</div>
 
                 <div>{this.displayErrorMessage()}</div>
             </div>

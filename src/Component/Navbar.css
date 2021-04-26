@@ -1,4 +1,93 @@
-.loginOrSignup {
+.logoutButtion {
+    display: flexbox;
     color: white;
-    border: 1px solid white;
+    padding: 5px;
+    margin-left: 5px;
+    margin-right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    align-self: center;
+}
+.logoutButtion:hover{
+    color: #afb2b4;
+}
+
+.userContainer {
+    width: fit-content;
+    position: absolute;
+    right:0;
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+}
+
+.userInfo {
+    display: flexbox;
+    color: #F1E05A;
+    padding: 5px;
+    margin-left: 10px;
+    margin-right: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    align-self: center;
+    text-transform: uppercase;
+}
+
+.navbarContainer {
+    width: 100%;
+    height: 60px;
+    background-color: #24292E;
+    display: flex;
+    flex-direction: row;
+}
+
+.websiteName {
+    display: flexbox;
+    align-self: center;
+    color: white;
+    margin-left: 10px;
+    margin-right: 20px;
+    font-weight: bold;
+    font-size: 26px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.websiteName:hover{
+    color: #afb2b4;
+}
+
+.icon {
+    display: block;
+    width: 50px;
+    height:50px;
+    align-self: center;
+    margin-left: 10px;
+}
+
+.icon:hover {
+    fill: #afb2b4;
+}
+
+.atRight {
+    position: absolute;
+    right:0;
+}
+
+.logInButtion {
+    position: absolute;
+    right:0;
+    display: flexbox;
+    color: white;
+    padding: 5px;
+    margin-left: 5px;
+    margin-right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    align-self: center;
+}
+.logInButtion:hover{
+    color: #afb2b4;
 }

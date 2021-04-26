@@ -88,7 +88,7 @@ export default class App extends React.Component {
     showCreatePost(){
         if(this.state.loginUser){
             return(
-                <div onClick = {()=>this.redirectToCreatePost()} >
+                <div className="createButton" onClick = {()=>this.redirectToCreatePost()} >
                     Create New Post
                 </div>
             )
@@ -106,15 +106,17 @@ export default class App extends React.Component {
     render() {
         return (
             <div>
-                <h2>Home Page</h2>
                 <Navbar></Navbar>
-                {this.showCreatePost()}
+                <div>{this.showCreatePost()}</div>
                 <div className="container">
                       {this.state.postList.map((singlePost,index)=>
-                      <div>
+                      <div className="postBlock">
                         <h3 className="title" key={index} onClick={() => this.enterSinglePost(singlePost)}>{singlePost.title}</h3>
-                        <h4>{singlePost.postTime.slice(0,10) + " " +singlePost.postTime.slice(11,19) }</h4>
-                        <div className="commentsStyle" onClick = {()=>this.directToComment(singlePost)}>Comments</div>
+                        <div className="titleDetail">
+                            <div>{singlePost.postTime.slice(0,10) + " " +singlePost.postTime.slice(11,19) }</div>
+                            <div className="commentsStyle" onClick = {()=>this.directToComment(singlePost)}> |  Comments</div>
+                        </div>
+
                       </div>)}
                 </div>
             </div>

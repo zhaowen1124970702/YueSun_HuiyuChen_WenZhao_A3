@@ -12,8 +12,8 @@
     width:90%;
     height: 100%;
     border: solid 1px #6A737D;
-    border-radius: 10px;
     background-color: #F6F8FA;
+    margin-top: 10px;
   }
 
 .headerStyle {
@@ -22,7 +22,6 @@
     font-size: x-large;
     font-weight: bolder;
     border: solid 1px #6A737D;
-    border-radius: 10px;
     color:white;
 
 }

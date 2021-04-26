@@ -43,40 +43,46 @@
   flex-direction: column;
   left:50%;
   transform: translate(-50%,0);
-  width:90%;
+  width:50px;
   height: 100%;
   border: solid 1px #6A737D;
-  border-radius: 10px;
   background-color: #F6F8FA;
+  /* padding: 12px 12px;
+  margin: 12px 12px; */
+  margin-bottom: 125px;
 }
 
-.titleList{
+.titleDetail{
   display:flex;
   position:relative;
-  flex-direction: column;
-  left:50%;
-  transform: translate(-50%,0);
-  width:90%;
+  flex-direction: row;
   height: fit-content;
-  border: solid 1px green;
+
+  /* border: solid 1px green; */
+}
+
+.titleBox {
+  display:flex;
+  flex-direction: row;
 }
 
 .title{
   font-size: medium;
   text-align: left;
-  color:red;
+  color: #24292E;
+  width: fit-content;
 
 }
 
-.navBar{
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  border: 1px solid grey;
-  width:100%;
-  top: 0;
-
+.title:hover{
+  text-decoration:underline;
+  cursor: pointer;
 }
+
+.postBlock {
+  padding:7px;
+}
+
 
 
 .postList {
@@ -89,11 +95,27 @@
 }
 
 .commentsStyle {
-  font-size: small;
+  margin-left: 10px;
 }
 
 .commentsStyle:hover {
-  font-size: small;
   text-decoration:underline;
+  cursor: pointer;
+}
+
+.createButton {
+  width: fit-content;
+  height: fit-content;
+  border: solid 1px #6A737D;
+  background-color: #2EA44F;
+  color: aliceblue;
+  font-weight: bolder;
+  padding:10px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.createButton:hover{
+  background-color: #269243;
   cursor: pointer;
 }

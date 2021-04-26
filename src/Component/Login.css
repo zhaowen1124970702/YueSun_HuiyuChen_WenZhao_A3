@@ -6,11 +6,58 @@
     color: aliceblue;
     font-weight: bolder;
     padding:10px;
-    margin: 10px;
+    margin: 30px 10px 10px 10px;
     border-radius: 10px;
+    display: block;
+    align-self: center;
 }
 
 .loginButton:hover{
     background-color: #269243;
 }
+
+.loginAndRegister{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 80%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    justify-content: space-evenly;
+}
+
+.inputContainer {
+    background-color: #F6F8FA;
+    display: flex;
+    flex-direction: column;
+    padding: 60px;
+    border: 1px solid #b3bbc4;
+    margin: 20px;
+}
+
+.inputBar {
+    position: relative;
+    width: 180px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.inputTitle {
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: #24292E;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@media(max-width:650px){
+    .loginAndRegister{
+        flex-direction: column;
+    }
+}
+
+
 

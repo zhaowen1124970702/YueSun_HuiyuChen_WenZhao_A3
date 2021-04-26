@@ -1,6 +1,7 @@
 import './App.css';
 import React from 'react';
 import Axios from 'axios';
+import './Navbar.css';
 
 const jwt = require('jsonwebtoken');
 

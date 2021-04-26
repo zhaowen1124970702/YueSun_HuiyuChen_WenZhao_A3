@@ -15,26 +15,6 @@ export default class App extends React.Component {
         }
     }
 
-    navbarDisplay() {
-        if(this.state.loginUser){
-            return (
-                <div className="navBar">
-                    <h1>Home Page</h1>
-                    <div>{this.state.loginUser}</div>
-                    <div>Create New Post</div>
-                    <button>Logout</button>
-                </div>
-            )
-        }else{
-            return (
-                <div className="navBar">
-                    <h1>Home Page</h1>
-                    <button>Login</button>
-                </div>
-            )
-        }
-    }
-
     componentDidMount() {
         Axios.get('/api/post')
             .then((response) => {
@@ -56,27 +36,11 @@ export default class App extends React.Component {
         })
     }
 
-    componentDidUpdate() {
-        Axios.get('/api/login/cookie')
-            .then((response) => {
-                this.setState({
-                    loginUser: response.data
-                })
-            })
-            .catch((error) => {
-                this.setState({
-                    loginUser: null
-                })
-        })
-    }
-
-
     enterSinglePost = (post) => {
         if(post.URL) {
             window.location.href = post.URL;
         }
         else{
-            // window.location.href = "post.aspx?id=" + post._id;
             window.location.href = "post?id=" + post._id;
         } 
     }
@@ -107,7 +71,7 @@ export default class App extends React.Component {
         return (
             <div>
                 <Navbar></Navbar>
-                <div>{this.showCreatePost()}</div>
+                {this.showCreatePost()}
                 <div className="container">
                       {this.state.postList.map((singlePost,index)=>
                       <div className="postBlock">

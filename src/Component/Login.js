@@ -16,18 +16,6 @@ export default class Login extends React.Component {
         }
     }
 
-    // componentDidMount() {
-    //     Axios.get('/api/login')
-    //         .then((response) => {
-    //             this.setState({
-    //                 users: response.data,
-    //         })})
-    //         .catch(error => console.error(error));
-    // }
-
-    // componentDidUpdate() {
-    // }
-
     onSubmit() {
         const newPerson = { 
             "username": this.state.username1,
@@ -93,24 +81,26 @@ export default class Login extends React.Component {
             <div>
                 <h1>Login Page</h1>
                 <div onClick={() => this.redirectToHomePage()}>Home</div>
-
-                <h2>Register</h2>
-                <label >Username:</label>
-                <input type="text" value={this.state.username1} onChange={e => this.setState({username1: e.target.value})}></input>
-                <label >Password:</label>
-                <input type="password" value={this.state.password1} onChange={e => this.setState({password1: e.target.value})}></input>
-                <div className="loginButton" onClick={() => this.onSubmit()}>Register</div>
-
-                <h2>Login</h2>
-                <label >Username:</label>
-                <input type="text" value={this.state.username2} onChange={e => this.setState({username2: e.target.value})}></input>
-                <label >Password:</label>
-                <input type="password" value={this.state.password2} onChange={e => this.setState({password2: e.target.value})}></input>
-                <div className="loginButton" onClick={() => this.onClick()}>Login</div>
-
                 <div>{this.displayErrorMessage()}</div>
+                <div className="loginAndRegister">
+                    <div className="inputContainer">
+                        <div className="inputTitle">Login</div>
+                        <label >Username:</label>
+                        <input type="text" className="inputBar" value={this.state.username2} onChange={e => this.setState({username2: e.target.value})}></input>
+                        <label >Password:</label>
+                        <input type="password" className="inputBar" value={this.state.password2} onChange={e => this.setState({password2: e.target.value})}></input>
+                        <div className="loginButton" onClick={() => this.onClick()}>Login</div>
+                    </div>
+                    <div className="inputContainer">
+                        <div className="inputTitle">Register</div>
+                        <label >Username:</label>
+                        <input type="text" className="inputBar" value={this.state.username1} onChange={e => this.setState({username1: e.target.value})}></input>
+                        <label >Password:</label>
+                        <input type="password" className="inputBar" value={this.state.password1} onChange={e => this.setState({password1: e.target.value})}></input>
+                        <div className="loginButton" onClick={() => this.onSubmit()}>Register</div>
+                    </div>
+                </div>
             </div>
-
         )
     }
 }

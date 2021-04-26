@@ -54,7 +54,7 @@ export default class Navbar extends React.Component {
         if(!this.state.loginUser) {
             return(
                 <div className="navbarContainer">
-                    <HomeIcon className="icon"/>
+                    <HomeIcon className="icon"  onClick={() => this.redirectToHomePage()}/>
                     <div className="websiteName" onClick={() => this.redirectToHomePage()}>Fur Families News</div>
                     <div className="logInButtion" onClick={() => this.redirectToLogin()}>LOGIN / SIGN UP</div>
                     
@@ -63,8 +63,8 @@ export default class Navbar extends React.Component {
         } else {
             return(
                 <div className="navbarContainer">
-                    <HomeIcon className="icon"/>
-                    <div className="websiteName"  onClick={() => this.redirectToHomePage()}>Fur Families News</div>
+                    <HomeIcon className="icon" onClick={() => this.redirectToHomePage()}/>
+                    <div className="websiteName" onClick={() => this.redirectToHomePage()}>Fur Families News</div>
                     <div className="userContainer">
                         <div className="userInfo">{this.state.loginUser}</div>
                         <div className="logoutButtion" onClick={() => this.logOut()}>LOGOUT</div>

@@ -241,7 +241,6 @@ export default class Post extends React.Component {
         return (
             <div>
                 <Navbar></Navbar>
-                <div onClick={() => this.redirectToHomePage()}>Home</div>
                 {this.showPost()}
                 {this.displayErrorMessage()}
                 <h2>{this.state.allComments.length} comments</h2>

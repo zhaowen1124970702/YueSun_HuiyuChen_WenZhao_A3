@@ -16,18 +16,6 @@ export default class Login extends React.Component {
         }
     }
 
-    // componentDidMount() {
-    //     Axios.get('/api/login')
-    //         .then((response) => {
-    //             this.setState({
-    //                 users: response.data,
-    //         })})
-    //         .catch(error => console.error(error));
-    // }
-
-    // componentDidUpdate() {
-    // }
-
     onSubmit() {
         const newPerson = { 
             "username": this.state.username1,

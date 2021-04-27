@@ -45,9 +45,11 @@ export default class Navbar extends React.Component {
                     loginUser: null
                 })
             })
+            .then(() => {
+                window.location.href = '/';
+            })
             .catch((error) => {
         })
-        window.location.href = '/';
     }
 
     showNavComponent() {

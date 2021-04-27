@@ -256,7 +256,7 @@ export default class Post extends React.Component {
     showComments(){
         return (
             <div >
-                {this.state.allComments.reverse().map((singleComment, index)=><Comment key ={index} comment ={singleComment} loginUser = {this.state.loginUser}></Comment>)}
+                {this.state.allComments.map((singleComment, index)=><Comment key ={index} comment ={singleComment} loginUser = {this.state.loginUser}></Comment>)}
             </div>
         )
     }

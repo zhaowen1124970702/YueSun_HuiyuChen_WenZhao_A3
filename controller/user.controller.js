@@ -51,7 +51,8 @@ router.get('/cookie',cookie_middleware, (req, res) => {
 router.post('/logOut', (req, res) => {
     // res.cookie('webdevtoken',{
     //     expires: new Date(Date.now())});
-    res.clearCookie('webdevtoken', {path: '/'});
+    // res.clearCookie('webdevtoken', {path: '/'});
+    res.cookie('webdevtoken','; expires=Thu, 01 Jan 1970 00:00:00 GMT');
     res.sendStatus(200);;
 })
 
